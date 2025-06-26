@@ -1,0 +1,145 @@
+.image img{
+    height:580px;
+    width:100%;
+}
+.slider{
+    height:400px;
+    width:100%;
+    border-radius: 15px;
+}
+.admin{
+border-radius: 30px;
+background-color: rgba(240, 248, 255, 0.623);
+height: 40px;
+
+}
+
+.adminhover{
+    transition: all 1.5s linear;
+}
+.adminhover:hover{
+
+    color: deeppink;
+    cursor: pointer;
+
+}
+
+.icon{
+    color: deeppink;
+}
+.project{
+    border-radius: 30px;
+    background-color: rgba(240, 248, 255, 0.623); 
+    height:120px;
+    border-color: rgba(192, 192, 192, 0.767);
+    
+}
+.project .text2{
+    font-family: Algerian;
+    font-size: 25px;
+}
+.text3{
+    font-family: Harrington;
+}
+.img3{
+height:200px;
+width:100%;
+border-radius: 30px;
+}
+.list li{
+display: block;
+   margin-top: 10px; 
+}
+.heading{
+    color:#4b4342;
+   font-style: italic;
+    font-size:40px;
+    margin-top: 80px;
+    font-family: Lucida Handwriting;
+    font-weight: bold;
+}
+.text4{
+    font-size: 20px;
+    font-family: Harrington;
+}
+.gallery{
+    padding:5px 2px 5px 2px;
+    border-radius: 20px;
+}
+.heading1{
+    font-family: Algerian;
+    font-size: 40px;
+      color:#4b4342;
+}
+.category{
+     font-family: Algerian;
+     font-size: 40px;
+     color:#4b4342;
+}
+.list2 li{
+    display: block;
+    margin-top: 10px;
+    font-family:Harrington ;
+    font-size: 18px;
+    padding-top: 0px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.list2{
+    border-radius: 40px;
+}
+.image2 img{
+    margin-top: 100px;
+}
+.heading4{
+    color: #4b4342;
+    font-size: 40px;
+    font-family:Algerian; 
+}
+.text3{
+    font-family:Harrington ;
+}
+.images{
+    justify-content: center;
+    width:80px;
+    height:40px;
+    margin-top: 80px;
+}
+.heading5{
+    color:#4b4342;
+    font-family:Algerian;
+    font-size: 40px;
+}
+.text5{
+     font-family:Harrington ;
+}
+.btn{
+     font-family:Harrington;
+     margin-top: 50px;
+     padding:6px 50px;
+     border-radius: 5px;
+     font-size: 20px;
+     cursor: pointer;
+     color: black;
+     border: 1px solid rgba(128, 128, 128, 0.445);
+     text-align: center;
+}
+.container-btn{
+     display: flex;
+      justify-content: center;
+       align-items: center; 
+}
+.map{
+    justify-content: center;
+    margin-top: 30px;
+}
+.img-style{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 40px;
+   margin-top: 30px;
+   
+}
+
