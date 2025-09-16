@@ -1,0 +1,705 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(230, 75%, 56%);
+  --title-color: hsl(230, 75%, 15%);
+  --text-color: hsl(230, 12%, 40%);
+  --body-color: hsl(230, 100%, 98%);
+  --container-color: hsl(230, 100%, 97%);
+  --border-color: hsl(230, 25%, 80%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Syne", sans-serif;
+  --h2-font-size: 1.25rem;
+  --normal-font-size: .938rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-fixed: 100;
+  --z-modal: 1000;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1023px) {
+  :root {
+    --h2-font-size: 1.5rem;
+    --normal-font-size: 1rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+input,
+button {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+body {
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1120px;
+  margin-inline: 1.5rem;
+}
+
+.main {
+  position: relative;
+  height: 100vh;
+}
+
+.main__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: -1;
+}
+
+.search,
+.login {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: var(--z-modal);
+  background-color: hsla(230, 75%, 15%, .1);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px); /* For safari */
+  padding: 8rem 1.5rem 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .4s;
+}
+
+.search__close,
+.login__close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 1.5rem;
+  color: var(--title-color);
+  cursor: pointer;
+}
+
+/*=============== HEADER & NAV ===============*/
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--body-color);
+  box-shadow: 0 2px 16px hsla(230, 75%, 32%, .15);
+  z-index: var(--z-fixed);
+}
+
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+  transition: color .4s;
+}
+
+.nav__actions {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+}
+
+.nav__search, 
+.nav__login, 
+.nav__toggle, 
+.nav__close {
+  font-size: 1.25rem;
+  color: var(--title-color);
+  cursor: pointer;
+  transition: color .4s;
+}
+
+:is(.nav__logo, .nav__search, .nav__login, .nav__toggle,):hover {
+  color: var(--first-color);
+}
+
+/* Navigation for mobile devices */
+@media screen and (max-width: 1023px) {
+  .nav__menu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    background-color: var(--body-color);
+    box-shadow: 0 8px 16px hsla(230, 75%, 32%, .15);
+    width: 100%;
+    padding-block: 4.5rem 4rem;
+    transition: top .4s;
+  }
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.5rem;
+  text-align: center;
+}
+
+.nav__link {
+    position: relative;
+    text-decoration: none;
+    color: #333; /* Default link color */
+    transition: all 0.3s ease;
+    font-weight: normal;
+}
+
+.nav__link::before {
+    content: '';
+    position: absolute;
+    top: 0; /* Top border */
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color:chocolate; /* Border color on hover */
+    transition: width 0.3s ease;
+}
+
+.nav__link:hover::before {
+    width: 100%;
+}
+
+.nav__link:hover {
+    font-weight: bold; /* Make text bold */
+    color: green; /* Change text color on hover */
+}
+
+
+.nav__close {
+  position: absolute;
+  top: 1.15rem;
+  right: 1.5rem;
+}
+
+/* Show menu */
+.show-menu {
+  top: 0;
+}
+
+/*=============== SEARCH ===============*/
+.search__form {
+  display: flex;
+  align-items: center;
+  column-gap: .5rem;
+  background-color: var(--container-color);
+  box-shadow: 0 8px 32px hsla(230, 75%, 15%, .2);
+  padding-inline: 1rem;
+  border-radius: .5rem;
+  transform: translateY(-1rem);
+  transition: transform .4s;
+}
+
+.search__icon {
+  font-size: 1.25rem;
+  color: var(--title-color);
+}
+
+.search__input {
+  width: 100%;
+  padding-block: 1rem;
+  background-color: var(--container-color);
+  color: var(--text-color);
+}
+
+.search__input::placeholder {
+  color: var(--text-color);
+}
+
+/* Show search */
+.show-search {
+  opacity: 1;
+  pointer-events: initial;
+}
+
+.show-search .search__form {
+  transform: translateY(0);
+}
+
+/*=============== LOGIN ===============*/
+.login__form, 
+.login__group {
+  display: grid;
+}
+
+.login__form {
+  background-color: var(--container-color);
+  padding: 2rem 1.5rem 2.5rem;
+  box-shadow: 0 8px 32px hsla(230, 75%, 15%, .2);
+  border-radius: 1rem;
+  row-gap: 1.25rem;
+  text-align: center;
+  transform: translateY(-1rem);
+  transition: transform .4s;
+}
+
+.login__title {
+  font-size: var(--h2-font-size);
+  color: var(--title-color);
+}
+
+.login__group {
+  row-gap: 1rem;
+}
+
+.login__label {
+  display: block;
+  text-align: initial;
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+  margin-bottom: .25rem;
+}
+
+.login__input {
+  width: 100%;
+  background-color: var(--container-color);
+  border: 2px solid var(--border-color);
+  padding: 1rem;
+  border-radius: .5rem;
+  color: var(--text-color);
+}
+
+.login__input::placeholder {
+  color: var(--text-color);
+}
+
+.login__signup {
+  margin-bottom: .5rem;
+}
+
+.login__signup a {
+  color: var(--first-color);
+}
+
+.login__forgot {
+  display: inline-block;
+  color: var(--first-color);
+  margin-bottom: 1.25rem;
+}
+
+.login__button {
+  display: inline-block;
+  background-color: var(--first-color);
+  width: 100%;
+  color: #fff;
+  font-weight: var(--font-semi-bold);
+  padding: 1rem;
+  border-radius: .5rem;
+  cursor: pointer;
+  transition: box-shadow .4s;
+}
+
+.login__button:hover {
+  box-shadow: 0 4px 24px hsla(230, 75%, 40%, .4);
+}
+
+/* Show login */
+.show-login {
+  opacity: 1;
+  pointer-events: initial;
+}
+
+.show-login .login__form {
+  transform: translateY(0);
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For medium devices */
+@media screen and (min-width: 576px) {
+  .search,
+  .login {
+    padding-top: 10rem;
+  }
+
+  .search__form {
+    max-width: 450px;
+    margin-inline: auto;
+  }
+
+  .search__close,
+  .login__close {
+    width: max-content;
+    top: 5rem;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    font-size: 2rem;
+  }
+
+  .login__form {
+    max-width: 400px;
+    margin-inline: auto;
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 1023px) {
+  .nav {
+    height: calc(var(--header-height) + 2rem);
+    column-gap: 3rem;
+  }
+  .nav__close, 
+  .nav__toggle {
+    display: none;
+  }
+  .nav__menu {
+    margin-left: auto;
+  }
+  .nav__list {
+    flex-direction: row;
+    column-gap: 3rem;
+  }
+
+  .login__form {
+    padding: 3rem 2rem 3.5rem;
+  }
+}
+
+@media screen and (min-width: 1150px) {
+  .container {
+    margin-inline: auto;
+  }
+}
+
+
+/* Footer Styles */
+footer {
+    background-color: #5d3d3a; /* Dark brown color from the image */
+    color: #fff;
+    padding: 60px 0 20px 0; /* Top/bottom padding for content, less for bottom text */
+    position: relative; /* Needed for wavy border and scroll-to-top */
+    overflow: hidden; /* To contain pseudo-elements if any */
+    text-align: center; /* Center align all content by default */
+}
+
+/* Wavy top border using pseudo-element or background image */
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px; /* Adjust height for the wavy effect */
+    /* This is a simplified wave; for a perfect match, you'd need an SVG background-image */
+    background: linear-gradient(135deg, transparent 25%, #5d3d3a 25%, #5d3d3a 50%, transparent 50%, transparent 75%, #5d3d3a 75%, #5d3d3a 100%);
+    background-size: 50px 40px; /* Adjust size for wave frequency and height */
+    transform: translateY(-100%); /* To position it at the very top */
+    z-index: 1; /* Ensure it's above the footer content */
+}
+
+
+
+.footer-container {
+    display: flex;
+    justify-content: space-around; /* Distribute items with space around them */
+    align-items: center; /* Vertically align items in the center */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    max-width: 1200px; /* Max width for content */
+    margin: 0 auto; /* Center the container */
+    padding: 0 20px; /* Horizontal padding */
+}
+
+.footer-section {
+    flex: 1; /* Allow sections to grow and shrink */
+    min-width: 280px; /* Minimum width before wrapping */
+    padding: 20px;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+/* Section specific alignments */
+.footer-section.follow-us {
+    text-align: left;
+}
+.footer-section.logo-section {
+    flex: 0 0 auto; /* Prevent logo section from growing/shrinking as much */
+    text-align: center;
+    padding: 0 40px; /* Add some spacing around the logo */
+}
+.footer-section.get-news {
+    text-align: right;
+}
+
+h2 {
+    font-family: 'Great Vibes', cursive; /* Elegant font for headings */
+    font-size: 2.2em; /* Adjust size as needed */
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #fff;
+    font-weight: normal;
+    position: relative; /* For squiggle line */
+    display: inline-block; /* To make squiggle align with text width */
+}
+
+.squiggle {
+    display: block;
+    width: 60px; /* Adjust width of the line */
+    height: 2px;
+    background-color: #f7a7ba; /* Pink color */
+    margin: 10px auto 0; /* Center if h2 is block, or adjust for inline-block */
+}
+.follow-us h2 .squiggle {
+    margin-left: 0; /* Align left for follow us */
+}
+.get-news h2 .squiggle {
+    margin-right: 0; /* Align right for get news */
+    margin-left: auto; /* Push to the right */
+}
+
+
+/* Social Icons */
+.social-icons {
+    margin-top: 20px;
+    display: flex; /* Use flexbox for spacing icons */
+    gap: 15px; /* Space between icons */
+    justify-content: flex-start; /* Align left for follow us section */
+}
+
+.get-news .social-icons {
+    justify-content: flex-end; /* Align right for get news section (if you decide to put icons there too) */
+}
+
+
+.social-icon {
+    display: flex; /* For centering icon inside circle */
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+    color: #fff;
+    font-size: 1.2em;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: #f7a7ba; /* Pink on hover */
+}
+
+/* Bellaria Logo */
+.bellaria-logo {
+    max-width: 250px; /* Adjust size as needed */
+    height: auto;
+    display: block; /* Remove extra space below image */
+    margin: 0 auto; /* Center the logo */
+}
+
+/* Newsletter Form */
+.newsletter-form {
+    display: flex;
+    justify-content: flex-end; /* Align to the right */
+    margin-top: 20px;
+}
+.follow-us .newsletter-form {
+    justify-content: flex-start; /* Align to the left (if placed here) */
+}
+
+
+.email-input {
+    padding: 12px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly off-white */
+    color: #333;
+    font-size: 1em;
+    outline: none;
+    width: 220px; /* Adjust width */
+    margin-right: 10px; /* Space between input and button */
+}
+
+.email-input::placeholder {
+    color: #999;
+}
+
+.subscribe-button {
+    background-color: #f7a7ba; /* Pink button */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 18px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex; /* For centering icon */
+    align-items: center;
+    justify-content: center;
+}
+
+.subscribe-button i {
+    font-size: 1.2em;
+}
+
+.subscribe-button:hover {
+    background-color: #e68fa7; /* Darker pink on hover */
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separator */
+    padding-top: 20px;
+    margin-top: 40px; /* Space from top content */
+    display: flex;
+    justify-content: center; /* Center the text */
+    align-items: center;
+    position: relative; /* For scroll to top button */
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: absolute;
+    right: 20px; /* Adjust position from right */
+    bottom: 20px; /* Adjust position from bottom */
+    background-color: #f7a7ba; /* Pink circle */
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    text-decoration: none;
+    line-height: 1; /* For vertical centering */
+    transition: background-color 0.3s ease;
+    z-index: 100; /* Ensure it's on top */
+}
+
+.scroll-to-top:hover {
+    background-color: #e68fa7;
+}
+
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .footer-section.logo-section {
+        flex-basis: 100%; /* Logo takes full width on medium screens */
+        order: -1; /* Move logo to the top */
+        margin-bottom: 20px;
+        padding-top: 0; /* Remove top padding for logo section */
+    }
+    .footer-section.follow-us,
+    .footer-section.get-news {
+        flex-basis: 48%; /* Each takes half width */
+        text-align: center; /* Center align text for better look */
+    }
+    .social-icons, .newsletter-form {
+        justify-content: center; /* Center align icons and form */
+    }
+    .follow-us h2 .squiggle,
+    .get-news h2 .squiggle {
+        margin: 10px auto 0; /* Center the squiggle on smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Stack sections vertically */
+    }
+    .footer-section {
+        min-width: unset; /* Remove min-width constraint */
+        width: 100%; /* Take full width */
+        text-align: center; /* Center align all sections */
+    }
+    .social-icons,
+    .newsletter-form {
+        justify-content: center; /* Ensure they are centered */
+    }
+    .email-input {
+        width: 60%; /* Adjust input width for smaller screens */
+    }
+    .footer-bottom {
+        flex-direction: column;
+    }
+    .scroll-to-top {
+        position: static; /* Remove fixed positioning on very small screens */
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-section {
+        padding: 15px;
+    }
+    h2 {
+        font-size: 1.8em;
+    }
+    .email-input {
+        width: 100%; /* Full width for input */
+        margin-right: 0;
+        margin-bottom: 10px; /* Space for button below */
+    }
+    .newsletter-form {
+        flex-direction: column; /* Stack input and button */
+        align-items: center; /* Center stacked items */
+    }
+    .subscribe-button {
+        width: 100%; /* Full width button */
+    }
+}

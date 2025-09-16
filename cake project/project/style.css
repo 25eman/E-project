@@ -1,0 +1,646 @@
+.text{
+  font-family:Algerian ;
+}
+.image img{
+    height:580px;
+    width:100%;
+}
+.slider{
+    height:400px;
+    width:100%;
+    border-radius: 15px;
+   
+}
+.admin{
+border-radius: 30px;
+background-color: rgba(240, 248, 255, 0.623);
+height: 40px;
+
+}
+
+.adminhover{
+    transition: all 1.5s linear;
+}
+.adminhover:hover{
+
+    color: deeppink;
+    cursor: pointer;
+
+}
+
+.icon{
+    color: deeppink;
+}
+.project{
+    border-radius: 30px;
+    background-color: rgba(240, 248, 255, 0.623); 
+    height:120px;
+    border-color: rgba(192, 192, 192, 0.767);
+    
+}
+.project .text2{
+    font-family: Algerian;
+    font-size: 25px;
+}
+.text3{
+    font-family: Harrington;
+}
+.img3{
+height:200px;
+width:100%;
+border-radius: 30px;
+}
+.list li{
+display: block;
+   margin-top: 10px; 
+}
+.heading{
+    color:#4b4342;
+   font-style: italic;
+    font-size:40px;
+    margin-top: 80px;
+    font-family: Lucida Handwriting;
+    font-weight: bold;
+}
+.text4{
+    font-size: 20px;
+    font-family: Harrington;
+}
+.gallery{
+    padding:5px 2px 5px 2px;
+    border-radius: 20px;
+}
+.heading1{
+    font-family: Algerian;
+    font-size: 35px;
+      color:#4b4342;
+}
+.category{
+     font-family: Algerian;
+     font-size: 40px;
+     color:#4b4342;
+}
+.list2 li{
+    display: block;
+    margin-top: 10px;
+    font-family:Harrington ;
+    font-size: 18px;
+    padding-top: 0px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.list2{
+    border-radius: 40px;
+}
+.image2 img{
+    margin-top: 100px;
+}
+.heading4{
+    color: #4b4342;
+    font-size: 40px;
+    font-family:Algerian; 
+}
+.text3{
+    font-family:Harrington ;
+}
+.images{
+    justify-content: center;
+    width:80px;
+    height:40px;
+    margin-top: 80px;
+}
+.heading5{
+    color:#4b4342;
+    font-family:Algerian;
+    font-size: 40px;
+}
+.text5{
+     font-family:Harrington ;
+}
+.btn{
+     font-family:Harrington;
+     margin-top: 50px;
+     padding:6px 50px;
+     border-radius: 5px;
+     font-size: 20px;
+     cursor: pointer;
+     color: black;
+     border: 1px solid rgba(128, 128, 128, 0.445);
+     text-align: center;
+}
+.container-btn{
+     display: flex;
+      justify-content: center;
+       align-items: center; 
+}
+.map{
+    justify-content: center;
+    margin-top: 30px;
+}
+.img-style{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 40px;
+   margin-top: 30px;
+   
+}
+.text2{
+    font-family:Harrington ;
+    color: #4b4342;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 70px;
+}
+.text-name{
+    margin-top: 20px;
+     font-family:Harrington;
+      color: #4b4342;
+      font-weight: bold;
+      font-size: 25px;
+      
+}
+.text-name:hover{
+    color: aqua;
+    cursor: pointer;
+}
+.text-name{
+ transition:all 2s linear;
+}
+.price{
+    font-size:  18px; 
+    color: #4b4342;
+}
+.heading6{
+    color: #4b4342;
+    font-family: Algerian;
+    font-size: 40px;
+    padding-top: 20px;
+}
+.text6{
+    color: #4b4342;
+    font-family: Harrington ;
+    font-size: 20px;
+    padding-top: 20px;
+    font-weight: 500;
+}
+
+.shop{
+
+    position: absolute;
+    top: 150px;
+    left: 45%;
+}
+
+.range1{
+    width: 30px;
+    padding: 10px;
+}
+.range1 {
+      width: 80%;
+      max-width: 500px;
+      appearance: none;
+      height: 6px;
+      background: #ddd;
+      border-radius: 5px;
+      outline: none;
+      margin-bottom: 10px;
+    }
+
+    .range1::-webkit-slider-thumb {
+      appearance: none;
+      height: 16px;
+      width: 16px;
+      background: #007bff;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .price-values {
+      font-size: 16px;
+    }
+
+    .price-values span {
+      font-weight: bold;
+    }
+
+.tags-container {
+      margin-top: 60px;
+      padding: 20px;
+      border-radius: 30px;
+      border: 1px solid #ccc;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .tags-container h6 {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .tags-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .tag-button {
+      background-color: palevioletred;
+      color: antiquewhite;
+      border: none;
+      border-radius: 40px;
+      width: 100px;
+      padding: 8px 12px;
+      font-family: cursive;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .tag-button:hover {
+      background-color: #d87093; 
+    }
+    .blog{
+         position: absolute;
+          top: 180px;
+           left: 32%;
+    }
+    .text7{
+      font-size: 25px;
+      color: deeppink;
+       left: 41%;
+        top: 270px;
+         position: absolute;
+         font-family:Lucida Handwriting ;
+      
+    }
+    .special{
+        color: #4b4342;
+        font-family:  Algerian;
+        font-size: 50px;
+        font-weight: 500;
+        margin-top: 15px;
+    }
+    .text8{
+        color: #4b4342;
+        font-size: 40px;
+        font-family:Harrington ;
+        margin-top: 10px;
+        font-weight: 600;
+    }
+    .text9{
+        color: #4b4342;
+        font-family: Harrington;
+        font-size: 20px;
+    }
+     .banner {
+      position: relative;
+      width: 100%;
+      height: 700px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      font-family: Arial, sans-serif; 
+    }
+     .banner::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+       background-image:  linear-gradient(rgba(0, 0, 0, 0.3)), 
+        url('pic/pic50.webp');
+          background-size: cover;
+      background-position: center;
+      filter: blur(1px);
+       z-index: -1; 
+       margin-top: 50px;
+     }
+     .banner1{
+        color: white;
+        margin-top: 150px;
+      
+     }
+     .custom-button{
+        margin-top: 0px;
+      width: 180px;
+        color: #4b4342;
+        font-family: Harrington ;
+    font-weight: 400;
+    font-size: 25px;
+
+     }
+    .custom-button:hover{
+     background-color: #4b4342;
+     cursor: pointer;
+     color: white;
+     
+    }
+     .card {
+      width: 300px;
+      height: 600px;
+      border: 5px solid  #5fcac7;
+      border-radius: 10px;
+    
+      position: relative;
+      background-color: #fff;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .card img {
+     
+      border-radius: 50%;
+      object-fit: cover;
+      position: absolute;
+      top: -90px; 
+      left: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    }
+    .card p {
+      padding: 0 20px 20px;
+      font-size: 14px;
+      color: #333;
+    }
+    .list-group-flush{
+        list-style: none;
+        text-align: center;
+        font-family: Harrington ;
+        font-weight: 200;
+        font-size: 20px;
+        margin-top: 0px;
+        margin-bottom: 0;
+        padding-top: 0;
+    }
+    .card h5{
+       margin-top: 80px;
+        color: #4b4342;
+    font-family:Harrington;
+    font-size: 30px;
+    font-weight: bold;
+    }
+    .card p{
+    margin-top: 0px;
+         color: #4b4342;
+    font-family:Harrington;
+    font-size: 50px;
+    font-weight:500;
+    margin-bottom: 0;
+    }
+    .btn9{        
+      background-color:#ff91a4;     
+      color: white;                  
+      border: none;                  
+      border-radius: 30px;                         
+      font-size: 14px;     
+      width: 120px;
+    text-align: center;
+    padding: 5px 10px;
+      
+    }
+    .btn8{
+        color: #4b4342;
+        width: 80%;
+        font-size: 30px;
+        font-family:  Harrington;
+        font-weight: 400;
+        border-radius: 40px;
+        margin-top: 20px;
+        border-color: #4b4342;
+        outline-color: #4b4342;
+    }
+    .btn8:hover{
+        background-color: #4b4342;
+        color: white;
+    }
+    .image-container {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .main-image {
+      width: 100%;
+      height: 100%;
+   
+      transition: filter 0.7s ease;
+    }
+
+    .overlay-image {
+      position: absolute;
+      top: 0px;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url(pic/pic56.png); 
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 0.9s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 25px;
+      font-family:Harrington ;
+      color: #4b4342;
+      font-weight: 600;
+    }
+
+    .image-container:hover .main-image {
+      filter: brightness(0.4); 
+    }
+
+    .image-container:hover .overlay-image {
+      opacity: 1;
+    }
+  .story{
+    color: #4b4342;
+        font-family:  Algerian;
+        font-size: 50px;
+        font-weight: 500;
+        margin-bottom: 5px;
+  }
+.text10{
+  color: #4b4342;
+  font-family:  Harrington;
+  font-size: 20px;
+  margin-top: 10px;
+}
+.btn10{
+  color: #4b4342;
+  font-size: 30px;
+  font-weight: 400;
+  width:250px;
+   border-radius: 30px;
+   font-family:  Harrington;
+}
+.btn10:hover{
+  background-color: #4b4342;
+  color: white;
+}
+.banner2{
+   position: relative;
+      width: 100%;
+      height: 800px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      font-family: Arial, sans-serif; 
+}
+.banner2::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+         background-image:  linear-gradient(rgba(249, 129, 147, 0.7)), 
+        url('pic/pic60.jpg');
+          background-size: cover;
+      background-position: center;
+      filter: blur(1px);
+       z-index: -1; 
+       margin-top: 80px;
+     }
+     .banner3{
+      color: white;
+        margin-top: 0px;
+        font-size: 18px;
+     }
+     .mission{
+      color: white;
+      font-size: 40px;
+      font-weight: 400;
+      font-family:  Algerian;
+      margin-top: 150px;
+     }
+     .text11{
+      color:white;
+      font-size: 20px;
+      margin-top: 50px;
+      align-items: center;
+      margin-bottom: 0;
+     }
+     .banner3 h6{
+      font-size: 30px;
+      font-family: Algerian ;
+      font-weight: 400;
+     }
+    .alex{
+       color: #4b4342;
+        font-family:  Algerian;
+        font-size: 60px;
+        font-weight: 500;
+    }
+    .Masterchef{
+      color: #d87093;
+      font-size: 30px;
+      font-family: Harrington;
+     margin-top: 0;
+    }
+.banner4{
+      position: relative;
+      width: 100%;
+      height: 700px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      font-family: Arial, sans-serif; 
+    }
+     .banner4::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+       background-image:  linear-gradient(rgba(0, 0, 0, 0.3)), 
+        url('pic/pic50.webp');
+          background-size: cover;
+      background-position: center;
+      filter: blur(1px);
+       z-index: -1; 
+       margin-top: 0px;
+     }
+  .bakery{
+    color: white;
+    font-family: Algerian;
+    font-size: 50px;
+    font-weight: 600;
+    text-align: center;
+  }
+  .text12{
+    color: white;
+    font-family:Harrington ;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 40px;
+  }
+  .standard{
+    color: #4b4342;
+    font-family:Algerian ;
+    font-size: 50px;
+  }
+  .text13{
+    color: #4b4342;
+    font-family: Harrington ;
+    font-size: 18px;
+    font-weight: 600;
+    
+  }
+    .portfolio {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .cake-item {
+      background-color: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .cake-item:hover {
+      transform: scale(1.03);
+    }
+
+    .cake-item img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .cake-info {
+      padding: 15px;
+    }
+
+    .cake-info h3 {
+      margin-top: 0;
+      font-size:20px;
+      color: #4b4342;
+      font-family: Algerian;
+      font-weight: 300;
+    }
+
+    .cake-info p {
+      color:#4b4342;
+      font-size: 16px;
+      font-family: Harrington;
+    }
+
+
+
+
+   
+
+  
